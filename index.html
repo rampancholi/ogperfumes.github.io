@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>High OG Parfum | Signature Eau de Parfum</title>
+  <meta name="description" content="High OG Parfum: six signature eau de parfum fragrances. Old Money, God Man, Legacy, Blu Beach, Dark Night and Chemistry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5efe4;
+      --cream-2: #ece3d2;
+      --ink: #231a12;
+      --ink-2: #3a2c20;
+      --muted: #7a6c5c;
+      --gold: #b08a45;
+      --gold-2: #d4b06a;
+      --wood: #4a3223;
+      --line: rgba(35, 26, 18, .14);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Jost", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+    .serif { font-family: var(--serif); }
+    .eyebrow { font-size: .74rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; }
+
+    /* Announcement + header */
+    .announce { background: var(--ink); color: var(--cream); text-align: center; font-size: .78rem; letter-spacing: .14em; padding: 9px 12px; text-transform: uppercase; }
+    header { position: sticky; top: 0; z-index: 40; background: rgba(245, 239, 228, .92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand svg { width: 38px; height: 38px; }
+    .brand b { font-family: var(--serif); font-size: 1.45rem; letter-spacing: .12em; font-weight: 600; line-height: 1; }
+    .brand small { display: block; font-family: var(--serif); font-style: italic; letter-spacing: .3em; font-size: .78rem; color: var(--gold); margin-top: 2px; }
+    nav ul { display: flex; gap: 34px; list-style: none; }
+    nav a { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); position: relative; padding: 4px 0; }
+    nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
+    nav a:hover::after { width: 100%; }
+    .actions { display: flex; align-items: center; gap: 8px; }
+    .icon-btn { position: relative; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; transition: background .2s; }
+    .icon-btn:hover { background: var(--cream-2); }
+    .icon-btn svg { width: 22px; height: 22px; stroke: var(--ink); fill: none; stroke-width: 1.5; }
+    .badge { position: absolute; top: 3px; right: 1px; min-width: 18px; height: 18px; border-radius: 9px; background: var(--gold); color: #fff; font-size: .68rem; display: grid; place-items: center; padding: 0 4px; font-weight: 600; }
+    .burger { display: none; }
+
+    /* Hero */
+    .hero { position: relative; background: radial-gradient(ellipse at 70% 40%, #4b3322 0%, #2a1d13 55%, #1a120b 100%); color: var(--cream); overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 78% 30%, rgba(212, 176, 106, .28), transparent 40%); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 30px; min-height: 640px; padding: 70px 0; }
+    .hero h1 { font-size: clamp(2.8rem, 6.4vw, 5.2rem); margin: 18px 0 22px; letter-spacing: -.01em; }
+    .hero h1 em { color: var(--gold-2); font-style: italic; font-weight: 400; }
+    .hero p { color: #d9ccb8; max-width: 470px; font-size: 1.05rem; font-weight: 300; margin-bottom: 34px; }
+    .btn { display: inline-block; padding: 15px 34px; font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; transition: all .25s; border: 1px solid transparent; }
+    .btn-gold { background: var(--gold); color: #fff; }
+    .btn-gold:hover { background: var(--gold-2); color: var(--ink); }
+    .btn-line { border-color: rgba(245, 239, 228, .5); color: var(--cream); margin-left: 12px; }
+    .btn-line:hover { background: var(--cream); color: var(--ink); }
+    .btn-dark { background: var(--ink); color: var(--cream); }
+    .btn-dark:hover { background: var(--gold); }
+    .hero-art { display: flex; justify-content: center; align-items: flex-end; gap: 0; position: relative; height: 520px; }
+    .hero-art .b { position: absolute; bottom: 20px; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .55)); animation: float 7s ease-in-out infinite; }
+    .hero-art .b1 { width: 200px; left: 4%; bottom: 40px; animation-delay: -2s; opacity: .95; }
+    .hero-art .b2 { width: 270px; left: 50%; transform: translateX(-50%); z-index: 2; }
+    .hero-art .b3 { width: 200px; right: 4%; bottom: 40px; animation-delay: -4s; opacity: .95; }
+    @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+
+    /* Marquee strip */
+    .strip { background: var(--cream-2); border-block: 1px solid var(--line); padding: 20px 0; }
+    .strip-in { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 14px; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); }
+    .strip-in span::before { content: "◆"; color: var(--gold); margin-right: 10px; font-size: .6rem; }
+
+    /* Sections */
+    section { padding: 96px 0; }
+    .head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+    .head h2 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); margin: 12px 0 14px; }
+    .head p { color: var(--muted); font-weight: 300; }
+
+    /* Product grid */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .card { background: #fbf7ef; border: 1px solid var(--line); transition: transform .35s, box-shadow .35s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(35, 26, 18, .13); }
+    .stage { position: relative; aspect-ratio: 1 / 1.05; display: grid; place-items: center; overflow: hidden; }
+    .stage .bottle { width: 52%; transition: transform .5s; filter: drop-shadow(0 18px 22px rgba(0, 0, 0, .35)); }
+    .card:hover .stage .bottle { transform: scale(1.06) translateY(-4px); }
+    .tag { position: absolute; top: 14px; left: 14px; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; background: rgba(255, 255, 255, .85); padding: 5px 10px; color: var(--ink-2); }
+    .info { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .info h3 { font-size: 1.75rem; letter-spacing: .03em; }
+    .notes { font-size: .82rem; letter-spacing: .1em; color: var(--gold); text-transform: uppercase; }
+    .desc { font-size: .92rem; color: var(--muted); font-weight: 300; margin: 6px 0 10px; }
+    .sizes { display: flex; gap: 8px; margin-bottom: 14px; }
+    .size { flex: 1; border: 1px solid var(--line); padding: 8px 6px; font-size: .82rem; text-align: center; transition: all .2s; background: transparent; }
+    .size small { display: block; color: var(--muted); font-size: .76rem; }
+    .size.on { border-color: var(--ink); background: var(--ink); color: var(--cream); }
+    .size.on small { color: var(--gold-2); }
+    .add { width: 100%; padding: 14px; background: var(--ink); color: var(--cream); font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; transition: background .25s; margin-top: auto; }
+    .add:hover { background: var(--gold); }
+
+    /* Discovery set */
+    .discovery { background: var(--ink); color: var(--cream); }
+    .disc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .disc-art { background: radial-gradient(circle at 50% 40%, #4b3322, #1d140d); padding: 40px 24px; border: 1px solid rgba(212, 176, 106, .3); }
+    .box { background: #efe6d3; padding: 18px 18px 22px; border: 1px solid var(--gold); text-align: center; color: var(--ink); }
+    .box .t { font-family: var(--serif); letter-spacing: .24em; font-size: 1.2rem; margin-top: 4px; }
+    .box small { font-size: .62rem; letter-spacing: .3em; color: var(--muted); text-transform: uppercase; }
+    .vials { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; background: #121212; padding: 18px 12px; margin-top: 16px; }
+    .vials svg { width: 100%; }
+    .disc h2 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); margin: 14px 0 18px; }
+    .disc p { color: #d6c9b4; font-weight: 300; margin-bottom: 22px; }
+    .disc ul { list-style: none; margin-bottom: 30px; }
+    .disc li { padding: 10px 0; border-bottom: 1px solid rgba(245, 239, 228, .14); font-size: .95rem; display: flex; justify-content: space-between; }
+    .disc li span { color: var(--gold-2); font-size: .82rem; letter-spacing: .1em; }
+    .price-line { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
+    .price-line b { font-family: var(--serif); font-size: 2.6rem; font-weight: 500; color: var(--gold-2); }
+    .price-line s { color: #a39581; }
+
+    /* Notes guide */
+    .scents { max-width: 760px; margin: 0 auto; background: #fbf7ef; border: 1px solid var(--line); padding: 14px 34px; }
+    .row { display: grid; grid-template-columns: 26px 160px 1fr; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .row:last-child { border: 0; }
+    .sw { width: 26px; height: 26px; border-radius: 3px; }
+    .row b { font-family: var(--serif); font-size: 1.25rem; letter-spacing: .08em; font-weight: 600; }
+    .row span { color: var(--muted); font-size: .92rem; }
+
+    /* Story */
+    .story { background: var(--cream-2); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .story-art { aspect-ratio: 1; background: radial-gradient(circle at 50% 45%, #f1e6cd, #cdb27a); display: grid; place-items: center; position: relative; }
+    .story-art svg.logo { width: 52%; opacity: .95; }
+    .story h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 14px 0 20px; }
+    .story p { color: var(--muted); font-weight: 300; margin-bottom: 16px; }
+    .stats { display: flex; gap: 40px; margin-top: 26px; }
+    .stats b { font-family: var(--serif); font-size: 2.4rem; color: var(--gold); font-weight: 500; display: block; line-height: 1; }
+    .stats span { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+    /* Reviews */
+    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .rev { background: #fbf7ef; border: 1px solid var(--line); padding: 32px 28px; }
+    .stars { color: var(--gold); letter-spacing: 4px; margin-bottom: 14px; }
+    .rev p { font-family: var(--serif); font-size: 1.25rem; line-height: 1.4; margin-bottom: 18px; }
+    .rev small { letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-size: .74rem; }
+
+    /* Newsletter */
+    .news { background: var(--wood); color: var(--cream); text-align: center; padding: 80px 0; }
+    .news h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 12px 0 10px; }
+    .news p { color: #d9ccb8; font-weight: 300; margin-bottom: 28px; }
+    .news form { display: flex; max-width: 480px; margin: 0 auto; }
+    .news input { flex: 1; padding: 15px 18px; border: 0; font: inherit; background: var(--cream); color: var(--ink); outline: none; min-width: 0; }
+    .news button { padding: 0 26px; background: var(--gold); color: #fff; letter-spacing: .2em; text-transform: uppercase; font-size: .76rem; }
+    .news button:hover { background: var(--gold-2); color: var(--ink); }
+    .ok { margin-top: 14px; color: var(--gold-2); min-height: 1.4em; font-size: .92rem; }
+
+    footer { background: #170f09; color: #b9ab96; padding: 64px 0 26px; font-size: .9rem; }
+    .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
+    footer h4 { font-family: var(--serif); color: var(--cream); font-size: 1.2rem; letter-spacing: .1em; margin-bottom: 14px; font-weight: 500; }
+    footer li { list-style: none; margin-bottom: 8px; }
+    footer a:hover { color: var(--gold-2); }
+    .copy { border-top: 1px solid rgba(255, 255, 255, .1); padding-top: 22px; text-align: center; font-size: .8rem; letter-spacing: .06em; }
+
+    /* Cart drawer */
+    .scrim { position: fixed; inset: 0; background: rgba(15, 10, 6, .55); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 80; }
+    .scrim.on { opacity: 1; pointer-events: auto; }
+    .drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(440px, 100%); background: var(--cream); z-index: 90; transform: translateX(100%); transition: transform .4s cubic-bezier(.2, .8, .2, 1); display: flex; flex-direction: column; box-shadow: -20px 0 60px rgba(0, 0, 0, .25); }
+    .drawer.on { transform: none; }
+    .d-head { display: flex; justify-content: space-between; align-items: center; padding: 22px 24px; border-bottom: 1px solid var(--line); }
+    .d-head h3 { font-size: 1.7rem; }
+    .d-body { flex: 1; overflow-y: auto; padding: 8px 24px; }
+    .empty { text-align: center; color: var(--muted); padding: 70px 10px; font-family: var(--serif); font-size: 1.4rem; }
+    .line { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: center; }
+    .line .th { width: 64px; height: 72px; display: grid; place-items: center; background: var(--cream-2); }
+    .line .th svg { width: 70%; }
+    .line b { font-family: var(--serif); font-size: 1.15rem; letter-spacing: .04em; }
+    .line small { display: block; color: var(--muted); font-size: .8rem; }
+    .qty { display: inline-flex; align-items: center; border: 1px solid var(--line); margin-top: 6px; }
+    .qty button { width: 28px; height: 28px; font-size: 1rem; }
+    .qty span { width: 26px; text-align: center; font-size: .88rem; }
+    .line .p { text-align: right; font-weight: 500; }
+    .line .rm { display: block; font-size: .72rem; color: var(--muted); text-decoration: underline; margin-top: 6px; margin-left: auto; }
+    .d-foot { border-top: 1px solid var(--line); padding: 20px 24px 24px; background: #fbf7ef; }
+    .total { display: flex; justify-content: space-between; font-size: 1.05rem; margin-bottom: 4px; }
+    .total b { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; }
+    .ship { font-size: .78rem; color: var(--muted); margin-bottom: 14px; }
+    .d-foot input, .d-foot textarea { width: 100%; padding: 11px 12px; margin-bottom: 8px; border: 1px solid var(--line); background: #fff; font: inherit; font-size: .9rem; outline: none; }
+    .d-foot input:focus, .d-foot textarea:focus { border-color: var(--gold); }
+    .d-foot textarea { resize: none; height: 62px; }
+    .checkout { width: 100%; padding: 15px; background: #1f8a4c; color: #fff; letter-spacing: .16em; text-transform: uppercase; font-size: .78rem; font-weight: 500; }
+    .checkout:hover { background: #17703d; }
+    .err { color: #b3261e; font-size: .8rem; min-height: 1.2em; margin-bottom: 4px; }
+
+    /* Toast + reveal */
+    .toast { position: fixed; bottom: 26px; left: 50%; transform: translate(-50%, 90px); background: var(--ink); color: var(--cream); padding: 13px 26px; font-size: .86rem; letter-spacing: .06em; z-index: 120; transition: transform .35s; }
+    .toast.on { transform: translate(-50%, 0); }
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s, transform .8s; }
+    .rv.in { opacity: 1; transform: none; }
+
+    @media (max-width: 960px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid, .disc-grid, .story-grid { grid-template-columns: 1fr; }
+      .hero-grid { padding: 50px 0 20px; }
+      .hero-art { height: 400px; }
+      .hero-art .b2 { width: 210px; } .hero-art .b1, .hero-art .b3 { width: 150px; }
+      .reviews { grid-template-columns: 1fr; }
+      .foot { grid-template-columns: 1fr 1fr; }
+      nav { display: none; position: absolute; top: 74px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--line); padding: 10px 22px 22px; }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; gap: 4px; }
+      nav a { display: block; padding: 12px 0; }
+      .burger { display: grid; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 70px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .btn-line { margin: 12px 0 0; }
+      .row { grid-template-columns: 22px 1fr; } .row span { grid-column: 2; margin-top: -10px; }
+      .scents { padding: 8px 20px; }
+      .foot { grid-template-columns: 1fr; }
+      .brand b { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared logo symbol -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="ginkgo" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M14 86 C34 78 48 66 56 50"/>
+          <path d="M56 50 C60 40 70 34 82 34"/>
+          <path d="M56 50 C52 40 46 34 38 30"/>
+        </g>
+        <g fill="currentColor">
+          <path d="M56 50 C44 46 36 30 40 14 C46 18 52 18 58 14 C62 18 68 18 72 14 C74 30 68 44 56 50Z" opacity=".92"/>
+          <path d="M82 34 C74 38 64 30 62 18 C66 18 70 20 74 18 C78 22 84 22 88 20 C90 28 88 32 82 34Z" opacity=".82"/>
+          <path d="M38 30 C30 34 20 28 16 16 C20 14 24 16 28 14 C32 16 36 18 40 16 C42 22 42 27 38 30Z" opacity=".82"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="announce">Free shipping on orders above ₹1,999 &nbsp;·&nbsp; Cash on delivery available</div>
+
+  <header>
+    <div class="wrap bar">
+      <a href="#top" class="brand" aria-label="High OG Parfum home">
+        <svg style="color:var(--gold)"><use href="#ginkgo"/></svg>
+        <div><b>HIGH OG</b><small>Parfum</small></div>
+      </a>
+      <nav id="nav">
+        <ul>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#discovery">Discovery Set</a></li>
+          <li><a href="#notes">Scent Guide</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button class="icon-btn" id="cartBtn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="badge" id="count">0</span>
+        </button>
+        <button class="icon-btn burger" id="burger" aria-label="Menu">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Eau de Parfum · Six Signatures</span>
+          <h1>Scents with <em>character,</em> made to be remembered.</h1>
+          <p>Six signature fragrances in hand-finished glass with a warm wooden cap. Find the one that feels like you, in a 10 ml discovery vial or a 100 ml signature bottle.</p>
+          <a href="#collection" class="btn btn-gold">Shop the collection</a>
+          <a href="#discovery" class="btn btn-line">Discovery set</a>
+        </div>
+        <div class="hero-art" id="heroArt"></div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <div class="wrap strip-in">
+        <span>Long-lasting Eau de Parfum</span>
+        <span>Premium gift packaging</span>
+        <span>Pan-India delivery</span>
+        <span>Easy order on WhatsApp</span>
+      </div>
+    </div>
+
+    <!-- COLLECTION -->
+    <section id="collection">
+      <div class="wrap">
+        <div class="head rv">
+          <span class="eyebrow">The Collection</span>
+          <h2>Six signatures</h2>
+          <p>Each one is blended to make a statement, from warm woods to cool ocean air.</p>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- DISCOVERY SET -->
+    <section class="discovery" id="discovery">
+      <div class="wrap disc-grid">
+        <div class="disc-art rv">
+          <div class="box">
+            <svg width="44" height="44" style="color:var(--gold);margin:0 auto"><use href="#ginkgo"/></svg>
+            <div class="t">HIGH OG</div>
+            <small>The Discovery Set · 6 signature fragrances</small>
+          </div>
+          <div class="vials" id="vials"></div>
+        </div>
+        <div class="disc rv">
+          <span class="eyebrow">Not sure where to start?</span>
+          <h2>The Discovery Set</h2>
+          <p>Try all six fragrances before you pick a favourite. Six 10 ml vials in a keepsake box, and perfect as a gift.</p>
+          <ul id="discList"></ul>
+          <div class="price-line"><b id="setPrice"></b><s id="setWas"></s></div>
+          <button class="btn btn-gold" id="addSet">Add set to cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENT GUIDE -->
+    <section id="notes">
+      <div class="wrap">
+        <div class="head rv">
+          <span class="eyebrow">Scent Guide</span>
+          <h2>Our signature scents</h2>
+          <p>A quick look at the notes behind each fragrance.</p>
+        </div>
+        <div class="scents rv" id="scentRows"></div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story">
+      <div class="wrap story-grid">
+        <div class="story-art rv">
+          <svg class="logo" style="color:#6b4a22"><use href="#ginkgo"/></svg>
+        </div>
+        <div class="rv">
+          <span class="eyebrow">Our Story</span>
+          <h2>Rooted like the ginkgo</h2>
+          <p>The ginkgo is one of the oldest trees on earth, and it has stood for strength, endurance and quiet confidence. That's the spirit behind High OG, where OG stands for the original.</p>
+          <p>Every bottle is composed to last on the skin, wrapped in refined packaging, and finished with a carved wooden cap that feels as good in the hand as the scent does on you.</p>
+          <div class="stats">
+            <div><b>6</b><span>Signatures</span></div>
+            <div><b>10/100</b><span>ml sizes</span></div>
+            <div><b>EDP</b><span>Concentration</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section>
+      <div class="wrap">
+        <div class="head rv">
+          <span class="eyebrow">Loved by customers</span>
+          <h2>Kind words</h2>
+        </div>
+        <div class="reviews">
+          <div class="rev rv"><div class="stars">★★★★★</div><p>"Old Money gets compliments everywhere I go. Warm, smooth and it lasts the whole day."</p><small>Aarav · Indore</small></div>
+          <div class="rev rv"><div class="stars">★★★★★</div><p>"The discovery set was the perfect way to choose. I ended up ordering Blu Beach in full size."</p><small>Meera · Mumbai</small></div>
+          <div class="rev rv"><div class="stars">★★★★★</div><p>"The packaging feels truly premium. Bought God Man as a gift and it was a huge hit."</p><small>Rohan · Delhi</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <div class="news" id="contact">
+      <div class="wrap">
+        <span class="eyebrow">Stay in the loop</span>
+        <h2>Get early access to new scents</h2>
+        <p>Join our list for launches, offers and fragrance tips.</p>
+        <form id="newsForm">
+          <input type="email" id="newsEmail" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+        <div class="ok" id="newsOk"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="brand" style="margin-bottom:14px"><svg style="color:var(--gold)"><use href="#ginkgo"/></svg><div><b style="color:var(--cream)">HIGH OG</b><small>Parfum</small></div></div>
+          <p>Signature eau de parfum with character. Crafted to be worn and remembered.</p>
+        </div>
+        <div><h4>Shop</h4><ul><li><a href="#collection">All fragrances</a></li><li><a href="#discovery">Discovery set</a></li><li><a href="#notes">Scent guide</a></li></ul></div>
+        <div><h4>Help</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li>hello@highogparfum.in</li><li>+91 99999 99999</li><li>Indore, India</li></ul></div>
+      </div>
+      <div class="copy">&copy; 2026 High OG Parfum. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- CART -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping cart">
+    <div class="d-head">
+      <h3>Your cart</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="d-body" id="cartBody"></div>
+    <div class="d-foot" id="cartFoot">
+      <div class="total"><span>Total</span><b id="cartTotal">₹0</b></div>
+      <div class="ship" id="shipNote"></div>
+      <input id="fName" placeholder="Full name" autocomplete="name">
+      <input id="fPhone" placeholder="Phone number" inputmode="tel" autocomplete="tel">
+      <textarea id="fAddr" placeholder="Delivery address with pincode"></textarea>
+      <div class="err" id="err"></div>
+      <button class="checkout" id="checkout">Order on WhatsApp</button>
+    </div>
+  </aside>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    /* ============ EDIT THESE ============ */
+    var WHATSAPP = "919999999999";      // your number: country code + number, no + or spaces
+    var FREE_SHIP = 1999;               // free shipping above this amount (₹)
+    var SHIPPING  = 99;                 // shipping fee below that (₹)
+    var PRICE_100 = 2499;               // price of a 100 ml bottle (₹)
+    var PRICE_10  = 399;                // price of a 10 ml vial (₹)
+    var SET_PRICE = 1799;               // price of the 6-vial Discovery Set (₹)
+    /* ==================================== */
+
+    var SCENTS = [
+      { id:"old-money", name:"Old Money", notes:"Woody · Amber · Vanilla", c1:"#f3e4b4", c2:"#c9a95c", bg:"#e9dcc0", desc:"Quiet luxury in a bottle. Warm woods and soft vanilla over a glowing amber base.", tag:"Bestseller" },
+      { id:"god-man",   name:"God Man",   notes:"Cardamom · Black Pepper · Cedar", c1:"#8a1c2e", c2:"#3d0a14", bg:"#5a1a26", desc:"Bold and magnetic. Spiced cardamom and pepper settle into smooth cedarwood." },
+      { id:"legacy",    name:"Legacy",    notes:"Bergamot · Lemon · Neroli", c1:"#9aa545", c2:"#4f5a1c", bg:"#6e7433", desc:"Fresh, refined and confident. Bright citrus opens to a clean neroli heart." },
+      { id:"blu-beach", name:"Blu Beach", notes:"Sea Salt · Marine Notes · Driftwood", c1:"#4f93b4", c2:"#1f5575", bg:"#5b8aa6", desc:"Cool ocean air and sun-bleached driftwood, made for warm days and open skies.", tag:"New" },
+      { id:"dark-night",name:"Dark Night",notes:"Caramel · Tonka · Amber", c1:"#a8681d", c2:"#4a2608", bg:"#4a3524", desc:"Dark, sweet and deep. Caramel and tonka wrapped in glowing amber for evenings." },
+      { id:"chemistry", name:"Chemistry", notes:"Rose · Jasmine · Musk", c1:"#a3253a", c2:"#561020", bg:"#6a2230", desc:"Sensual and floral. Velvet rose and jasmine melt into a soft musky trail." }
+    ];
+
+    var money = function (n) { return "₹" + n.toLocaleString("en-IN"); };
+    var $ = function (id) { return document.getElementById(id); };
+    var uid = 0;
+
+    /* Draws a bottle in SVG, tinted with the scent's colours */
+    function bottle(s, size) {
+      var g = "g" + (uid++);
+      var label = size === "10"
+        ? '<text x="100" y="175" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#2b1d12" letter-spacing="1.5">' + s.name.toUpperCase() + '</text>'
+        : '<text x="100" y="178" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#f4ead6" letter-spacing="2">' + s.name.toUpperCase() + '</text>' +
+          '<text x="100" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="#e8d8b4" letter-spacing="1.4">EAU DE PARFUM</text>' +
+          '<text x="100" y="211" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="#e8d8b4">100 ml</text>';
+      return '<svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+        '<defs>' +
+        '<linearGradient id="l' + g + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + s.c1 + '"/><stop offset="1" stop-color="' + s.c2 + '"/></linearGradient>' +
+        '<linearGradient id="w' + g + '" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a2417"/><stop offset=".45" stop-color="#6b4630"/><stop offset="1" stop-color="#2f1c11"/></linearGradient>' +
+        '<linearGradient id="s' + g + '" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#fff" stop-opacity=".12"/></linearGradient>' +
+        '</defs>' +
+        '<rect x="68" y="8" width="64" height="46" rx="4" fill="url(#w' + g + ')"/>' +
+        '<path d="M76 18 Q100 12 124 18" stroke="#8a6040" stroke-width="1.2" fill="none" opacity=".6"/>' +
+        '<rect x="84" y="54" width="32" height="10" fill="#c9a24f"/>' +
+        '<rect x="26" y="64" width="148" height="206" rx="12" fill="url(#l' + g + ')" stroke="rgba(255,255,255,.4)" stroke-width="2"/>' +
+        '<rect x="34" y="72" width="132" height="190" rx="7" fill="url(#l' + g + ')" opacity=".9"/>' +
+        '<rect x="26" y="64" width="148" height="206" rx="12" fill="url(#s' + g + ')"/>' +
+        (size === "10"
+          ? '<rect x="52" y="116" width="96" height="96" rx="3" fill="#f4ead6"/>'
+          : '') +
+        '<g style="color:' + (size === "10" ? "#a8802f" : "#e9c97c") + '"><use href="#ginkgo" x="80" y="' + (size === "10" ? 120 : 98) + '" width="40" height="40"/></g>' +
+        (size === "10" ? '<text x="100" y="170" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#2b1d12" letter-spacing="2">HIGH OG</text>' : '<text x="100" y="164" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#f4ead6" letter-spacing="3">HIGH OG</text>') +
+        label +
+        '</svg>';
+    }
+
+    /* Slim vial for the discovery set */
+    function vial(s) {
+      var g = "v" + (uid++);
+      return '<svg viewBox="0 0 60 190" aria-hidden="true"><defs><linearGradient id="' + g + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + s.c1 + '"/><stop offset="1" stop-color="' + s.c2 + '"/></linearGradient></defs>' +
+        '<rect x="14" y="4" width="32" height="40" rx="3" fill="#111"/><rect x="18" y="44" width="24" height="8" fill="#2a2a2a"/>' +
+        '<rect x="8" y="52" width="44" height="134" rx="5" fill="url(#' + g + ')" stroke="rgba(255,255,255,.25)"/>' +
+        '<rect x="12" y="76" width="36" height="78" rx="2" fill="#f4ead6"/>' +
+        '<text x="30" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="5" fill="#2b1d12">HIGH OG</text>' +
+        '<text x="30" y="136" text-anchor="middle" font-family="Georgia,serif" font-size="5.4" fill="#2b1d12" font-weight="bold">' + s.name.split(" ")[0].toUpperCase() + '</text>' +
+        '</svg>';
+    }
+
+    /* ---------- Build the page ---------- */
+    (function build() {
+      // Hero
+      $("heroArt").innerHTML =
+        '<div class="b b1">' + bottle(SCENTS[3], "100") + '</div>' +
+        '<div class="b b2">' + bottle(SCENTS[1], "100") + '</div>' +
+        '<div class="b b3">' + bottle(SCENTS[0], "100") + '</div>';
+
+      // Product cards
+      $("grid").innerHTML = SCENTS.map(function (s) {
+        return '<article class="card rv" data-id="' + s.id + '" data-size="100">' +
+          '<div class="stage" style="background:radial-gradient(circle at 50% 35%, ' + s.bg + 'cc, ' + s.bg + ')">' +
+          (s.tag ? '<span class="tag">' + s.tag + '</span>' : '') +
+          '<div class="bottle">' + bottle(s, "100") + '</div></div>' +
+          '<div class="info"><h3>' + s.name + '</h3><div class="notes">' + s.notes + '</div>' +
+          '<p class="desc">' + s.desc + '</p>' +
+          '<div class="sizes">' +
+          '<button class="size on" data-size="100">100 ml<small>' + money(PRICE_100) + '</small></button>' +
+          '<button class="size" data-size="10">10 ml<small>' + money(PRICE_10) + '</small></button></div>' +
+          '<button class="add">Add to cart</button></div></article>';
+      }).join("");
+
+      // Discovery set
+      $("vials").innerHTML = SCENTS.map(vial).join("");
+      $("discList").innerHTML = SCENTS.map(function (s) {
+        return "<li>" + s.name + "<span>" + s.notes.split(" · ")[0] + "</span></li>";
+      }).join("");
+      $("setPrice").textContent = money(SET_PRICE);
+      $("setWas").textContent = money(PRICE_10 * 6);
+
+      // Scent guide
+      $("scentRows").innerHTML = SCENTS.map(function (s) {
+        return '<div class="row"><div class="sw" style="background:linear-gradient(135deg,' + s.c1 + ',' + s.c2 + ')"></div><b>' + s.name.toUpperCase() + '</b><span>' + s.notes + '</span></div>';
+      }).join("");
+    })();
+
+    /* ---------- Cart ---------- */
+    var cart = [];
+    try { cart = JSON.parse(localStorage.getItem("highog-cart") || "[]"); } catch (e) { cart = []; }
+    function save() { try { localStorage.setItem("highog-cart", JSON.stringify(cart)); } catch (e) {} }
+
+    function itemInfo(it) {
+      if (it.id === "set") return { name: "Discovery Set", sub: "6 × 10 ml", price: SET_PRICE, thumb: '<div style="display:flex;gap:2px;width:80%">' + SCENTS.map(function (s) { return '<div style="flex:1;height:44px;border-radius:2px;background:linear-gradient(' + s.c1 + ',' + s.c2 + ')"></div>'; }).join("") + '</div>' };
+      var s = SCENTS.filter(function (x) { return x.id === it.id; })[0];
+      return { name: s.name, sub: it.size + " ml · Eau de Parfum", price: it.size === "100" ? PRICE_100 : PRICE_10, thumb: bottle(s, it.size) };
+    }
+
+    function render() {
+      var n = 0, total = 0;
+      cart.forEach(function (it) { n += it.qty; total += itemInfo(it).price * it.qty; });
+      $("count").textContent = n;
+      $("cartTotal").textContent = money(total);
+      $("cartFoot").style.display = cart.length ? "block" : "none";
+
+      var ship = total >= FREE_SHIP ? 0 : SHIPPING;
+      $("shipNote").textContent = total === 0 ? "" :
+        (total >= FREE_SHIP ? "You've unlocked free shipping." : "Add " + money(FREE_SHIP - total) + " more for free shipping (shipping " + money(ship) + ").");
+
+      if (!cart.length) { $("cartBody").innerHTML = '<div class="empty">Your cart is empty</div>'; return; }
+      $("cartBody").innerHTML = cart.map(function (it, i) {
+        var d = itemInfo(it);
+        return '<div class="line"><div class="th">' + d.thumb + '</div>' +
+          '<div><b>' + d.name + '</b><small>' + d.sub + '</small>' +
+          '<div class="qty"><button data-a="dec" data-i="' + i + '">−</button><span>' + it.qty + '</span><button data-a="inc" data-i="' + i + '">+</button></div></div>' +
+          '<div class="p">' + money(d.price * it.qty) + '<button class="rm" data-a="rm" data-i="' + i + '">Remove</button></div></div>';
+      }).join("");
+    }
+
+    function add(id, size) {
+      var f = cart.filter(function (c) { return c.id === id && c.size === size; })[0];
+      if (f) f.qty++; else cart.push({ id: id, size: size, qty: 1 });
+      save(); render(); toast("Added to your cart");
+    }
+
+    function openCart(v) { $("drawer").classList.toggle("on", v); $("scrim").classList.toggle("on", v); document.body.style.overflow = v ? "hidden" : ""; }
+    var tt;
+    function toast(m) { var t = $("toast"); t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(function () { t.classList.remove("on"); }, 1800); }
+
+    $("grid").addEventListener("click", function (e) {
+      var card = e.target.closest(".card"); if (!card) return;
+      var sz = e.target.closest(".size");
+      if (sz) {
+        card.dataset.size = sz.dataset.size;
+        card.querySelectorAll(".size").forEach(function (b) { b.classList.toggle("on", b === sz); });
+        var s = SCENTS.filter(function (x) { return x.id === card.dataset.id; })[0];
+        card.querySelector(".bottle").innerHTML = bottle(s, sz.dataset.size);
+        card.querySelector(".bottle").style.width = sz.dataset.size === "10" ? "34%" : "52%";
+      }
+      if (e.target.closest(".add")) add(card.dataset.id, card.dataset.size);
+    });
+    $("addSet").onclick = function () { add("set", "set"); };
+    $("cartBody").addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      var i = +b.dataset.i;
+      if (b.dataset.a === "inc") cart[i].qty++;
+      if (b.dataset.a === "dec") { cart[i].qty--; if (cart[i].qty < 1) cart.splice(i, 1); }
+      if (b.dataset.a === "rm") cart.splice(i, 1);
+      save(); render();
+    });
+    $("cartBtn").onclick = function () { openCart(true); };
+    $("closeCart").onclick = $("scrim").onclick = function () { openCart(false); };
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") openCart(false); });
+
+    /* ---------- Checkout via WhatsApp ---------- */
+    $("checkout").onclick = function () {
+      var name = $("fName").value.trim(), phone = $("fPhone").value.trim(), addr = $("fAddr").value.trim();
+      if (!name || phone.replace(/\D/g, "").length < 10 || addr.length < 10) { $("err").textContent = "Please add your name, a valid phone number and full address."; return; }
+      $("err").textContent = "";
+      var total = 0, lines = cart.map(function (it) {
+        var d = itemInfo(it), amt = d.price * it.qty; total += amt;
+        return "• " + d.name + " (" + d.sub + ") × " + it.qty + " = " + money(amt);
+      });
+      var ship = total >= FREE_SHIP ? 0 : SHIPPING;
+      var msg = "Hello High OG Parfum, I'd like to place an order:\n\n" + lines.join("\n") +
+        "\n\nSubtotal: " + money(total) + "\nShipping: " + (ship ? money(ship) : "Free") + "\nTotal: " + money(total + ship) +
+        "\n\nName: " + name + "\nPhone: " + phone + "\nAddress: " + addr;
+      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
+    };
+
+    /* ---------- Misc ---------- */
+    $("burger").onclick = function () { $("nav").classList.toggle("open"); };
+    $("nav").addEventListener("click", function (e) { if (e.target.tagName === "A") $("nav").classList.remove("open"); });
+    $("newsForm").addEventListener("submit", function (e) {
+      e.preventDefault(); $("newsOk").textContent = "Thank you. You're on the list."; $("newsEmail").value = "";
+    });
+
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } });
+    }, { threshold: .12 });
+    document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+
+    render();
+  </script>
+</body>
+</html>
